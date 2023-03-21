@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech to Text</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./static/css/styles.css" />
+</head>
+
+<body class="bg-gray-200">
+  <div class="container mx-auto p-4">
+    <div class="max-w-lg mx-auto bg-white rounded-lg overflow-hidden shadow-lg">
+      <div class="py-4 px-6 bg-gray-200 uppercase tracking-wide font-bold text-gray-700">
+        Convert speech to text
+      </div>
+      <div class="py-4 px-6">
+        <div id="loading-icon" class="hidden">
+          <svg class="animate-spin h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zm5-5.291h5.657l1.414 1.414-2.828 2.828 2.828 2.828-1.414 1.414L11 14.414V17h-2v-5zm0-3v-2h2v2h-2z">
+            </path>
+          </svg>
+        </div>
+        <div class="mb-3">
+          <label class="block text-gray-700 font-bold mb-2" for="audio">
+            Choose a file:
+          </label>
+          <div id="drop-area"
+            class="border-2 border-dashed border-gray-400 rounded-md p-6 flex flex-col items-center justify-center cursor-pointer">
+            <span class="block mb-2 text-gray-400">Drag and drop your file here</span>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="choose-btn">
+              or choose a file
+            </button>
+            <form id="upload-form" class="hidden">
+              <input type="file" name="audio" id="audio" accept=".mp3" />
+              <button id="submit-btn"
+                class="submit-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hidden">
+                Transcribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div id="loading-text" class="hidden">Loading...</div>
+
+        <div id="progress" class="hidden">
+          <p class="mb-2 text-gray-700 font-bold">Uploading...</p>
+          <div class="h-2 bg-gray-400 rounded-full w-full">
+            <div id="bar" class="h-2 bg-blue-500 rounded-full w-0"></div>
+          </div>
+        </div>
+        <div id="transcription" class="hidden mt-4">
+          <p class="mb-2 text-gray-700 font-bold">Transcription:</p>
+          <div class="p-4 bg-gray-100 rounded-md">
+            <p id="transcription-text" class="text-gray-700"></p>
+          </div>
+          <div class="mt-4">
+            <a id="download-link" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hidden"
+              href="#" download>
+              Download transcription
+            </a>
+          </div>
+          <div class="mt-4">
+            <button id="reset-btn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hidden">
+              Reset
+            </button>
+          </div>
+          <div id="processing-text" class="hidden mt-4">
+            <p class="mb-2 font-bold">Processing...</p>
+          </div>
+        </div>
+        <div id="notification" class="hidden mt-4">
+          <p class="mb-2 font-bold">Status:</p>
+          <div id="notification-text" class="p-4 rounded-md"></div>
+        </div>
+      </div>
+      <a id="link" href="#" download hidden></a>
+    </div>
+  </div>
+
+  <!-- Loading icon for the entire page -->
+  <div id="loading-icon" class="hidden absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="lds-dual-ring"></div>
+  </div>
+
+  <!-- JavaScript code -->
+  <script src="./static/js/scripts.js"></script>
+</body>
+
+</html>

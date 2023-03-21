@@ -1,0 +1,25 @@
+/* Custom CSS */
+
+.choose-btn {
+  transition: all 0.2s;
+}
+
+.choose-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.download-btn {
+  transition: all 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #1d4ed8;
+}
+
+#drop-area {
+  transition: all 0.2s;
+}
+
+#drop-area.hover {
+  background-color: #e5e7eb;
+}
