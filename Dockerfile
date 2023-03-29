@@ -12,4 +12,4 @@ COPY . .
 
 CMD ["gunicorn", "app:app", "-c", "./gunicorn.conf.py"]
 
-LABEL NAME=openai-app-image VERSION=0.0.1
+LABEL NAME=openai-app-image VERSION=0.0.1 
