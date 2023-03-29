@@ -14,7 +14,7 @@ This is a Flask web application for speech to text transcription using OpenAI's 
 1. Navigate to `http://localhost:5000` in your web browser.
 2. Click the "Choose a file" button and select an MP3 audio file to upload.
 3. Click the "Transcribe" button to start the transcription process.
-4. Wait for the transcription to complete.
+4. Wait for the transcription to comp`lete.
 5. Click the "Download transcription" link to download the text file.
 
 ## License
@@ -22,4 +22,6 @@ This is a Flask web application for speech to text transcription using OpenAI's 
 This project is licensed under the MIT License. See the `LICENSE` file for more information.
 
 ## Sample Sound Source 
-* 立法會主席於新春午宴致辭 (2023/02/17)
+
+
+--name openai-api-v2

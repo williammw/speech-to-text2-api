@@ -1,10 +1,13 @@
-FROM python:3.7-slim-buster
+FROM python:3.7
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Install ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg
 
 COPY . .
 
-CMD ["python3", "app.py"]
+CMD ["gunicorn", "app:app", "-c", "./gunicorn.conf.py"]

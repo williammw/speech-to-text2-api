@@ -81,7 +81,7 @@ def transcribe():
                 segment.export(temp_audio_file.name, format='mp3')
                 print(temp_audio_file.name)
                 transcription = openai.Audio.transcribe(
-                    "whisper-1", temp_audio_file, temperature=0, language='zh', prompt='請把香港立法會會議記錄的發言內容轉錄出來。記錄包括來自各方與會者的演講，包括議員、官員和秘書處人員等。錄音中的語言主要是粵語，但也可能包括普通話和英語。請儘可能準確地轉錄發言內容。')
+                    "whisper-1", temp_audio_file, temperature=0, language='zh')
                 print(transcription)
                 # Save the transcription to a file
                 save_path = os.path.join(
