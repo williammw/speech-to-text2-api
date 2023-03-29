@@ -16,7 +16,7 @@ load_dotenv()
 
 
 # Define function to convert Unicode to readable format and save to file
-
+    
 
 def save_transcription(transcription_text, save_dir):
     transcription_path = os.path.join(save_dir, 'transcription.txt')
