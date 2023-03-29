@@ -37,3 +37,5 @@ az webapp deployment list-publishing-profiles --name $APP_NAME --resource-group 
 
 # 10. 
 az webapp deployment list-publishing-profiles --name $APP_NAME --resource-group $RESOURCE_GROUP_NAME
+
+# tLb8Q~PBFYq3ZdgWGa1M_U~MZ-DT9ZHz5Iv-taZK
