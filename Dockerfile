@@ -1,5 +1,8 @@
 # Use an official Python runtime as a parent image
-FROM python:3.7
+FROM python:3.9-slim-buster
+
+# Install ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg
 
 # Set the working directory to /app
 WORKDIR /app
