@@ -11,7 +11,7 @@ import uuid
 from flask_cors import CORS
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv() 
 
 
 # Define function to convert Unicode to readable format and save to file
