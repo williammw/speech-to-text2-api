@@ -1,15 +1,20 @@
+# Use an official Python runtime as a parent image
 FROM python:3.7
 
+# Set the working directory to /app
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Install ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg
+# Install the required packages
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
-CMD ["python3", "app.py"]
+# Define environment variable
+ENV NAME World
 
-LABEL NAME=openai-app-image VERSION=0.0.1 
+# Run app.py when the container launches
+CMD ["python", "app.py"]
